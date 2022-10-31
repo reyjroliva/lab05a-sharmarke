@@ -50,10 +50,10 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let firstSum = sum(a, b)[0];
-  let finalSum = sum(firstSum, c)[0];
-  let firstProduct = multiply(a,b)[0];
-  let finalProduct = multiply(firstProduct, c)[0];
+  let firstSum = sum(a, b)[0]; // firstSum = a+b
+  let finalSum = sum(firstSum, c)[0]; // finalSum = firstSum + c
+  let firstProduct = multiply(a,b)[0]; // firstProduct = a*b
+  let finalProduct = multiply(firstProduct, c)[0]; // finalProduct = firstProduct*c
   return [finalSum, finalProduct,`${a} and ${b} and ${c} sum to ${finalSum}.` , `The product of ${a} and ${b} and ${c} is ${finalProduct}.`];
 }
 
@@ -75,8 +75,14 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
+  // let firstSum = sum(sumArr[0], sumArr[1])[0]; // firstSum = sumArr[0] + sumArr[1];
+  // let finalSum = sum(firstSum, sumArr[2])[0]; // finalSum = firstSum + sumArr[2];
+
   let finalSum = 0;
-  for (let i = 0; sumArr.length > i; i++) {
+  for (let i = 0; sumArr.length > i; i++){
+  //   2     =         2     +   0
+  //   5     =         3     +   0
+  //   9     =         4     +   0
     finalSum = sum(sumArr[i], finalSum)[0];
   }
   return [finalSum, `${sumArr} was passed in as an array of numbers, and ${finalSum} is their sum.`];
